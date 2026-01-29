@@ -21,7 +21,7 @@ def generate():
     history = data.get('history', []) # Поддержка истории диалога!
 
     # Формируем запрос к Google API (Gemini 1.5 Flash)
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={GEMINI_KEY}"
     
     # Конвертируем историю в формат Google
     contents = []
@@ -54,4 +54,5 @@ def generate():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
+
     app.run(host='0.0.0.0', port=10000)
